@@ -1,0 +1,144 @@
+{
+  "extends": "eslint-config-airbnb",
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jest": true
+  },
+  "rules": {
+    "arrow-body-style": 0,
+    "arrow-parens": 0,
+    "async/missing-await-in-async-fn": 1,
+    "class-methods-use-this": 0,
+    "comma-dangle": [
+      1,
+      "always-multiline"
+    ],
+    "global-require": 0,
+    "id-length": 0,
+    "import/default": 0,
+    "import/imports-first": 1,
+    "import/named": 0,
+    "import/namespace": 0,
+    "import/newline-after-import": 1,
+    "import/no-duplicates": 0,
+    "import/no-extraneous-dependencies": 1,
+    "import/no-named-as-default": 2,
+    "import/no-unresolved": 0,
+    "import/prefer-default-export": 0,
+    "jsx-a11y/label-has-for": 0,
+    "jsx-a11y/no-static-element-interactions": 0,
+    "key-spacing": 0,
+    "max-len": 0,
+    "new-cap": [
+      2,
+      {
+        "capIsNewExceptions": [
+          "OrderedMap",
+          "Object",
+          "Record"
+        ]
+      }
+    ],
+    "no-alert": 0,
+    "no-await-in-loop": 0,
+    "no-console": 0,
+    "no-debugger": 1,
+    "no-lonely-if": 1,
+    "no-mixed-operators": [
+      "error",
+      {
+        "allowSamePrecedence": true
+      }
+    ],
+    "no-multi-spaces": 0,
+    "no-multiple-empty-lines": 0,
+    "no-plusplus": 0,
+    "no-restricted-syntax": [
+      0,
+      "DebuggerStatement"
+    ],
+    "no-return-await": 0,
+    "no-trailing-spaces": 1,
+    "no-underscore-dangle": 0,
+    "no-unused-vars": [
+      1,
+      {
+        "args": "after-used",
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "[iI]gnored"
+      }
+    ],
+    "object-curly-spacing": 0,
+    "operator-assignment": 1,
+    "prefer-spread": 1,
+    "prefer-template": 1,
+    "react/forbid-prop-types": 1,
+    "react/jsx-equals-spacing": 0,
+    "react/jsx-filename-extension": 0,
+    "react/jsx-indent": 1,
+    "react/jsx-no-duplicate-props": 1,
+    "react/no-array-index-key": 0,
+    "react/no-multi-comp": 0,
+    "react/no-string-refs": 1,
+    "react/no-unused-prop-types": 0,
+    "react/prop-types": 0,
+    "react/require-default-props": 0,
+    "react/self-closing-comp": 1,
+    "react/sort-comp": 0,
+    "react/prefer-stateless-function": [
+      1,
+      {
+        "ignorePureComponents": true
+      }
+    ],
+    "linebreak-style": 0,
+    "radix": 0,
+    "no-unused-expressions": [
+      "error",
+      {
+        "allowShortCircuit": true
+      }
+    ],
+    "object-shorthand": [
+      "error",
+      "properties"
+    ]
+  },
+  "plugins": [
+    "flowtype",
+    "react",
+    "import",
+    "async"
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 2017,
+    "sourceType": "module"
+  },
+  "settings": {
+    "flowtype": {
+      "onlyFilesWithFlowAnnotation": false
+    },
+    "import/resolve": {
+      "moduleDirectory": [
+        "node_modules",
+        "src"
+      ]
+    }
+  },
+  "globals": {
+    "__DEVELOPMENT__": true,
+    "__CLIENT__": true,
+    "__MOBILE__": true,
+    "__SERVER__": true,
+    "__DISABLE_SSR__": true,
+    "__DEVTOOLS__": true,
+    "__DLLS__": true,
+    "$Shape": true,
+    "socket": true,
+    "webpackIsomorphicTools": true,
+    "Generator": true
+  }
+}

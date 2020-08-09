@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "incremental": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": [
+      "dom",
+      "es2015"
+    ],
+    "baseUrl": "./",
+    "outDir": "dist"
+  },
+  "include": [
+    "**.ts",
+    "**/*.test.ts"
+  ]
+}
