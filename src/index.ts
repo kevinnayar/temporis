@@ -1,26 +1,23 @@
-type TemporisItem<T> = { 
+import { useTemporis as _useTemporis } from './use-temporis';
+
+type TemporisItem<T> = {
   item: T;
   isCurrent: boolean;
 };
 
-export function createSeriesItem<T>(item: T): TemporisItem<T> {
-  return {
-    item,
-    isCurrent: true,
-  };
-}
-
-export function findCurrentItemIndex<T>(history: TemporisItem<T>[]): number {
-  return history.findIndex((h) => h.isCurrent === true);
-}
-
-type TemporisInstance<T> = {
+export type TemporisInstance<T> = {
   pushOne: (item: T) => void;
   pushMany: (items: Array<T>) => void;
   undo: () => void;
   redo: () => void;
   getCurrentItem: () => void | T;
 };
+
+const createSeriesItem = <T>(item: T): TemporisItem<T> => ({ item, isCurrent: true });
+
+const findCurrentItemIndex = <T>(history: TemporisItem<T>[]): number => history.findIndex((h) => h.isCurrent === true);
+
+export const useTemporis = _useTemporis;
 
 export default function Temporis<T>(limit?: number): TemporisInstance<T> {
   const _history: TemporisItem<T>[] = [];

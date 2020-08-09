@@ -3,7 +3,7 @@
 An intuitive and lightweight approach to constructing timelines. Allows you to capture a history of app state as immutable snapshots and to implement undo and redo with predictability and ease.
 
 
-💾 [Installation](#Installation) &nbsp; | &nbsp; 👍 [Example](#Example) &nbsp; | &nbsp;  💻 [API](#API) &nbsp; | &nbsp;  ⚛️ [Usage with React/Typescript](#Usage-with-React-and-Typescript)
+💾 [Installation](#Installation) &nbsp; | &nbsp; 👍 [Example](#Example) &nbsp; | &nbsp;  💻 [API](#API)
 
 
 <br />
@@ -44,6 +44,13 @@ temporis.redo();
 // Get current item -> returns the 4th action
 currentItem = temporis.getCurrentItem();
 ```
+
+### Other Examples
+🍦[Vanilla JS](https://github.com/kevinnayar/temporis/blob/master/src/examples/example-with-vanilla-js.js)
+
+⚛️ [React](https://github.com/kevinnayar/temporis/blob/master/src/examples/example-with-react.tsx)
+
+⚛️ [React using Hookd](https://github.com/kevinnayar/temporis/blob/master/src/examples/example-with-react-hooks.tsx)
 
 <br />
 
@@ -134,11 +141,7 @@ function App() {
     temporis.undo();
     const current = temporis.getCurrentItem();
     if (current) {
-      setItems({
-        name: current.name,
-        color: current.color,
-        fontSize: current.fontSize,
-      });
+      setItems(current);
     }
   }
 
@@ -146,11 +149,7 @@ function App() {
     temporis.redo();
     const current = temporis.getCurrentItem();
     if (current) {
-      setItems({
-        name: current.name,
-        color: current.color,
-        fontSize: current.fontSize,
-      });
+      setItems(current);
     }
   }
 

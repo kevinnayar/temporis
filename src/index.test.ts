@@ -1,39 +1,6 @@
-import Temporis, { createSeriesItem, findCurrentItemIndex } from './index';
+import Temporis from './index';
 
 describe('Temporis', () => {
-  test('createSeriesItem', () => {
-    expect(createSeriesItem(true)).toEqual({ item: true, isCurrent: true }); // boolean
-    expect(createSeriesItem(1)).toEqual({ item: 1, isCurrent: true }); // number
-    expect(createSeriesItem('foo')).toEqual({ item: 'foo', isCurrent: true }); // string
-
-    expect(createSeriesItem([1, 2, 3, 4])).toEqual({ item: [1, 2, 3, 4], isCurrent: true }); // array
-    expect(createSeriesItem({ name: 'foo', num: 1, arr: [1, 2, 3, 4] })).toEqual({ item: { name: 'foo', num: 1, arr: [1, 2, 3, 4] }, isCurrent: true }); // object
-
-    expect(createSeriesItem(undefined)).toEqual({ item: undefined, isCurrent: true }); // undefined
-    expect(createSeriesItem(null)).toEqual({ item: null, isCurrent: true }); // null
-  });
-
-  test('findCurrentItemIndex', () => {
-    const history = [
-      {
-        item: { id: 'id_foo', name: 'Foo', color: 'red', size: 28 },
-        isCurrent: false,
-      },
-      {
-        item: { id: 'id_foo', name: 'Foo', color: 'green', size: 36 },
-        isCurrent: false,
-      },
-      {
-        item: { id: 'id_foo', name: 'Foo', color: 'blue', size: 44 },
-        isCurrent: true,
-      },
-    ];
-
-    expect(findCurrentItemIndex([])).toEqual(-1);
-    expect(findCurrentItemIndex([history[0], history[1]])).toEqual(-1);
-    expect(findCurrentItemIndex(history)).toEqual(2);
-  });
-
   test('temporis', () => {
     // instantiate
     const limit = 5;

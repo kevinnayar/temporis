@@ -4,7 +4,8 @@
   "description": "An intuitive and lightweight approach to constructing timelines. Allows you to capture a history of app state as immutable snapshots and to implement undo and redo with predictability and ease.",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "start": "parcel src/examples/index.html"
   },
   "jest": {
     "preset": "ts-jest",
@@ -29,6 +30,11 @@
     "@svgr/parcel-plugin-svgr": "^5.1.0",
     "@types/jest": "^25.2.1",
     "@types/node": "^13.13.2",
+    "@types/react": "^16.9.45",
+    "@types/react-dom": "^16.9.8",
+    "parcel-bundler": "^1.12.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "typescript": "^3.9.7"
   },
   "devDependencies": {

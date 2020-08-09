@@ -1,0 +1,89 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  padding: 20px;
+}
+h1,
+h2,
+h3,
+h4 {
+  margin-top: 0;
+}
+p {
+  line-height: 1.6;
+}
+button {
+  min-height: 30px;
+  background: #3ddb93;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  font-size: 12px;
+  margin-right: 10px;
+  min-width: 30px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.25s ease-in-out;
+}
+button:hover {
+  background: #24c179;
+}
+
+.section {
+  padding: 5%;
+}
+
+.controls {
+  background: #f1f5f8;
+  margin-bottom: 20px;
+  padding: 20px 20px 10px;
+  color: #404245;
+  display: flex;
+}
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.action-btn {
+  display: flex;
+  flex-direction: column;
+  font-size: 24px;
+  align-items: center;
+  padding: 4px 12px;
+}
+.action-btn span {
+  font-size: 50%;
+  margin-bottom: 6px;
+}
+
+.selections {
+  display: flex;
+}
+.selection {
+  margin: 0 20px;
+}
+.selection-title {
+  font-weight: bold;
+  margin: 0 0 5px;
+}
+.selection select {
+  padding: 6px;
+  min-width: 100px;
+}
+.selection input {
+  padding: 6px;
+}
+
+.preview {
+  min-height: 200px;
+  border: 10px solid #f1f5f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/*# sourceMappingURL=/base.ee376513.css.map */
