@@ -15,10 +15,10 @@
     "outDir": "dist"
   },
   "include": [
-    "**.ts",
-    "**/*.test.ts"
+    "src/*.ts"
   ],
   "exclude": [
+    "src/*.test.ts",
     "src/examples/**.ts"
   ]
 }

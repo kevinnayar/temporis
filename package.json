@@ -7,7 +7,7 @@
   "scripts": {
     "test": "jest --watch",
     "start": "parcel src/examples/index.html",
-    "build": "tsc src/index.ts"
+    "build": "tsc"
   },
   "jest": {
     "preset": "ts-jest",
