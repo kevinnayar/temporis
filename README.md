@@ -56,15 +56,15 @@ currentItem = temporis.getCurrentItem();
 ```ts
 const temporis = Temporis(20);
 ```
-> Takes a `limit` for actions stored in history, defaults to 35. Increasing this will increase the memory footprint of your app, so caveat emptor 😊
+> Takes an argument `limit (number)` for the number of actions stored in history, defaults to 35. Increasing this will increase the memory footprint of your app, so caveat emptor 😊
 
 #### Push actions to history
-**Push one**
+**Push a single action**
 ```ts
 temporis.pushOne({ id: 'id_foo', name: 'Foo', color: 'red', size: 20 });
 ```
 
-**Push many (sequentially)**
+**Push many actions sequentially**
 ```ts
 const actions = [
   { id: 'id_foo', name: 'Foo', color: 'red', size: 28 },
