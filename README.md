@@ -2,10 +2,8 @@
 
 An intuitive and lightweight approach to constructing timelines. Allows you to capture a history of app state as immutable snapshots and to implement undo and redo with predictability and ease.
 
-- [Installation](#Installation)
-- [Example](#Example)
-- [API](#API)
-- [Usage with React/Typescript](#Usage-with-React-and-Typescript)
+
+💾 [Installation](#Installation) &nbsp; &nbsp; | &nbsp; &nbsp; 👍 [Example](#Example) &nbsp; &nbsp; | &nbsp; &nbsp;  💻 [API](#API) &nbsp; &nbsp; | &nbsp; &nbsp;  ⚛️ [Usage with React/Typescript](#Usage-with-React-and-Typescript)
 
 
 <br />
@@ -22,6 +20,7 @@ An intuitive and lightweight approach to constructing timelines. Allows you to c
 ![alt text](https://github.com/kevinnayar/temporis/blob/master/src/assets/undo-redo.gif?raw=true)
 
 ```ts
+// Create an instance
 const temporis = Temporis(50);
 
 // Push complete state with each action
