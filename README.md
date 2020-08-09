@@ -2,7 +2,6 @@
 
 An intuitive and lightweight approach to constructing timelines. Allows you to capture a history of app state as immutable snapshots and to implement undo and redo with predictability and ease.
 
-- [Purpose](#Purpose)
 - [Installation](#Installation)
 - [Example](#Example)
 - [API](#API)
@@ -11,25 +10,17 @@ An intuitive and lightweight approach to constructing timelines. Allows you to c
 
 <br />
 
-## Purpose
-- Capture app state history as an array of immutable snapshots
-- Traverse up and down that history to implement undo and redo
-- Extract the full history or the current state at any given time
-
-
-<br />
-
 ## Installation
-```
-npm install temporis
-```
-```
-yarn add temporis
-```
+`npm install temporis`
+
+`yarn add temporis`
 
 <br />
 
 ## Example
+
+![alt text](https://github.com/kevinnayar/temporis/blob/master/src/assets/undo-redo.gif?raw=true)
+
 ```ts
 const temporis = Temporis(50);
 
@@ -119,16 +110,18 @@ type Items = {
   fontSize: string;
 };
 
-// needs to be outside of the component in order
-// to maintain state in spite of re-renders
+// Create instance and push initial state outside of
+// component to maintain state in spite of re-renders
 const temporis = Temporis<Items>();
+const initialState: Items = {
+  name: 'Hello, World!',
+  color: 'red',
+  fontSize: '24',
+};
+temporis.pushOne(initialState);
 
 function App() {
-  const [items, setItems] = useState<Items>({
-    name: 'Hello, World!',
-    color: 'red',
-    fontSize: '24',
-  });
+  const [items, setItems] = useState<Items>(initialState);
 
   function pushToHistory(_name: string, _color: string, _fontSize: string) {
     temporis.pushOne({
