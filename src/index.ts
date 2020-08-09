@@ -1,6 +1,6 @@
 import { useTemporis as _useTemporis } from './use-temporis';
 
-type TemporisItem<T> = {
+export type TemporisItem<T> = {
   item: T;
   isCurrent: boolean;
 };

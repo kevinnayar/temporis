@@ -3,6 +3,7 @@
     "target": "esnext",
     "module": "commonjs",
     "incremental": true,
+    "declaration": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
