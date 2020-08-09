@@ -6,8 +6,10 @@
 
 An intuitive and lightweight approach to constructing timelines. Allows you to capture a history of app state as immutable snapshots and implement undo and redo with predictability and ease. 
 
-Under 8KB minified / Under 3KB minified + gzipped
+Under **8KB** minified / Under **3KB** minified + gzipped.
 
+
+<br />
 
 ## 💾 [Installation](#Installation) &nbsp; | &nbsp; 👍 [Usage](#Usage) &nbsp; | &nbsp;  💻 [API](#API)
 
@@ -29,6 +31,8 @@ Under 8KB minified / Under 3KB minified + gzipped
 ### [&rarr; ⚛️ Use with `react` and the `useTemporis` hook](https://github.com/kevinnayar/temporis/blob/master/src/examples/example-with-react-hooks.tsx)
 
 ### [&rarr; 🍦 Use with `vanilla javascript`](https://github.com/kevinnayar/temporis/blob/master/src/examples/example-with-vanilla-js.js)
+
+<br />
 
 
 ```ts
