@@ -24,7 +24,7 @@ type TemporisInstance<T> = {
 
 export default function Temporis<T>(limit?: number): TemporisInstance<T> {
   const _history: TemporisItem<T>[] = [];
-  const _limit = limit || 35;
+  const _limit = limit || 100;
 
   const pushOne = (item: T) => {
     const index = findCurrentItemIndex(_history);

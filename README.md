@@ -9,9 +9,7 @@ An intuitive and lightweight approach to constructing timelines. Allows you to c
 <br />
 
 ## Installation
-`npm install temporis`
-
-`yarn add temporis`
+`npm install temporis` &nbsp; or &nbsp; `yarn add temporis`
 
 <br />
 
@@ -55,7 +53,7 @@ currentItem = temporis.getCurrentItem();
 ```ts
 const temporis = Temporis(20);
 ```
-> Takes an argument `limit (number)` for the number of actions stored in history, defaults to 35. Increasing this will increase the memory footprint of your app, so caveat emptor 😊
+> Takes an optional argument `limit (number)` for the number of actions stored in history, defaults to 100. Increasing this will increase the memory footprint of your app, so caveat emptor 😊
 
 #### Push a single action
 ```ts
@@ -107,11 +105,13 @@ type Items = {
 // Create instance and push initial state outside of
 // component to maintain state in spite of re-renders
 const temporis = Temporis<Items>();
+
 const initialState: Items = {
   name: 'Hello, World!',
   color: 'red',
   fontSize: '24',
 };
+
 temporis.pushOne(initialState);
 
 function App() {
