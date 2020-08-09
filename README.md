@@ -1,16 +1,35 @@
 # ⏰ temporis
 
-_An intuitive and lightweight approach to constructing timelines. Allows you to capture a history of app state as immutable snapshots and to implement undo and redo with ease and predictability._
+An intuitive and lightweight approach to constructing timelines. Allows you to capture a history of app state as immutable snapshots and to implement undo and redo with predictability and ease.
 
-🎵 🎶 _back, back and forth and forth_ 🎶 🎵
+- [Purpose](#Purpose)
+- [Installation](#Installation)
+- [Example](#Example)
+- [API](#API)
+- [Usage with React/Typescript](#Usage-with-React-and-Typescript)
 
-## Overview
-- Capture app state history as immutable snapshots
-- Traverse up and down the timeline (undo/redo)
-- Extract the full history or the current state at any time
+
+<br />
+
+## Purpose
+- Capture app state history as an array of immutable snapshots
+- Traverse up and down that history to implement undo and redo
+- Extract the full history or the current state at any given time
 
 
-## Working Example
+<br />
+
+## Installation
+```
+npm install temporis
+```
+```
+yarn add temporis
+```
+
+<br />
+
+## Example
 ```ts
 const temporis = Temporis(50);
 
@@ -37,6 +56,8 @@ temporis.redo();
 // Get current item -> returns the 4th action
 currentItem = temporis.getCurrentItem();
 ```
+
+<br />
 
 ## API
 
@@ -83,7 +104,9 @@ const currentItem = temporis.getCurrentItem();
 const history = temporis.getHistory();
 ```
 
-## Usage with React/Typescript
+<br />
+
+## Usage with React and Typescript
 ```tsx
 import * as React from 'react';
 import { useState } from 'react';

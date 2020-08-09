@@ -1,7 +1,7 @@
 {
   "name": "temporis",
   "version": "1.0.0",
-  "description": "An intuitive and lightweight approach to constructing timelines. Allows you to capture a history of app state as immutable snapshots and to implement undo and redo with ease and predictability.",
+  "description": "An intuitive and lightweight approach to constructing timelines. Allows you to capture a history of app state as immutable snapshots and to implement undo and redo with predictability and ease.",
   "main": "index.js",
   "scripts": {
     "test": "jest --watch"
