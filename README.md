@@ -3,7 +3,7 @@
 An intuitive and lightweight approach to constructing timelines. Allows you to capture a history of app state as immutable snapshots and to implement undo and redo with predictability and ease.
 
 
-💾 [Installation](#Installation) &nbsp; &nbsp; | &nbsp; &nbsp; 👍 [Example](#Example) &nbsp; &nbsp; | &nbsp; &nbsp;  💻 [API](#API) &nbsp; &nbsp; | &nbsp; &nbsp;  ⚛️ [Usage with React/Typescript](#Usage-with-React-and-Typescript)
+💾 [Installation](#Installation) &nbsp; | &nbsp; 👍 [Example](#Example) &nbsp; | &nbsp;  💻 [API](#API) &nbsp; | &nbsp;  ⚛️ [Usage with React/Typescript](#Usage-with-React-and-Typescript)
 
 
 <br />
