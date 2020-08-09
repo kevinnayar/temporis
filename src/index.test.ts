@@ -107,15 +107,6 @@ describe('Temporis', () => {
     temporis.redo();
     currentItem = temporis.getCurrentItem();
     expect(currentItem).toEqual({ name: 9 });
-
-    // getHistory
-    expect(temporis.getHistory()).toEqual([
-      actions[actions.length - limit],
-      actions[actions.length - (limit - 1)],
-      actions[actions.length - (limit - 2)],
-      actions[actions.length - (limit - 3)],
-      actions[actions.length - (limit - 4)],
-    ]);
   });
 });
 

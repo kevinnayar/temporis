@@ -20,7 +20,6 @@ type TemporisInstance<T> = {
   undo: () => void;
   redo: () => void;
   getCurrentItem: () => void | T;
-  getHistory: () => Array<T>;
 };
 
 export default function Temporis<T>(limit?: number): TemporisInstance<T> {
@@ -76,16 +75,11 @@ export default function Temporis<T>(limit?: number): TemporisInstance<T> {
     return currentItemMaybe ? currentItemMaybe.item : undefined;
   };
 
-  const getHistory = (): T[] => {
-    return _history.map((h) => h.item);
-  };
-
   return {
     pushOne,
     pushMany,
     undo,
     redo,
     getCurrentItem,
-    getHistory,
   };
 }

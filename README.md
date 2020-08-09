@@ -57,42 +57,37 @@ const temporis = Temporis(20);
 ```
 > Takes an argument `limit (number)` for the number of actions stored in history, defaults to 35. Increasing this will increase the memory footprint of your app, so caveat emptor 😊
 
-#### Push actions to history
-**Push a single action**
+#### Push a single action
 ```ts
-temporis.pushOne({ id: 'id_foo', name: 'Foo', color: 'red', size: 20 });
+temporis.pushOne({ color: 'red' });
 ```
+> Pushes a single action into history which becomes the current state.
 
-**Push many actions sequentially**
+#### Push many actions sequentially
 ```ts
-const actions = [
-  { id: 'id_foo', name: 'Foo', color: 'red', size: 28 },
-  { id: 'id_foo', name: 'Foo', color: 'green', size: 36 },
-  { id: 'id_foo', name: 'Foo', color: 'blue', size: 44 },
-];
-
+const actions = [{ color: 'red' }, { color: 'green' }, { color: 'blue' }];
 temporis.pushMany(actions);
 ```
+> Pushes many actions into history in sequence, the last of which becomes the current state.
 
 #### Undo
 ```ts
 temporis.undo();
 ```
+> Goes back one action and makes that the current state.
 
 #### Redo
 ```ts
 temporis.redo();
 ```
+> Goes forward one action and makes that the current state.
 
 #### Get current item 
 ```ts
 const currentItem = temporis.getCurrentItem();
 ```
+> Returns the current state.
 
-#### Get history
-```ts
-const history = temporis.getHistory();
-```
 
 <br />
 
@@ -122,16 +117,16 @@ temporis.pushOne(initialState);
 function App() {
   const [items, setItems] = useState<Items>(initialState);
 
-  function pushToHistory(_name: string, _color: string, _fontSize: string) {
+  function pushToHistory(name: string, color: string, fontSize: string) {
     temporis.pushOne({
-      name: _name,
-      color: _color,
-      fontSize: _fontSize,
+      name,
+      color,
+      fontSize,
     });
     setItems({
-      name: _name,
-      color: _color,
-      fontSize: _fontSize,
+      name,
+      color,
+      fontSize,
     });
   }
 
