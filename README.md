@@ -2,16 +2,15 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 
-**v0.1.0** (beta)
-
 An intuitive and lightweight approach to constructing timelines. Allows you to capture a history of app state as immutable snapshots and implement undo and redo with predictability and ease. 
 
 Under **8KB** minified / Under **3KB** minified + gzipped.
 
-
 <br />
 
-## 💾 [Installation](#Installation) &nbsp; | &nbsp; 👍 [Usage](#Usage) &nbsp; | &nbsp;  💻 [API](#API)
+- **💾 [Installation](#Installation)**
+- **👍 [Usage](#Usage)**
+- **💻 [API](#API)**
 
 
 <br />
@@ -25,12 +24,13 @@ Under **8KB** minified / Under **3KB** minified + gzipped.
 
 ![alt text](https://github.com/kevinnayar/temporis/blob/master/src/assets/undo-redo.gif?raw=true)
 
+### Check out these examples
 
-### [&rarr; ⚛️ Use with `react`](https://github.com/kevinnayar/temporis/blob/master/src/examples/example-with-react.tsx)
+#### [&rarr; &nbsp; ⚛️ &nbsp; Use with `react`](https://github.com/kevinnayar/temporis/blob/master/src/examples/example-with-react.tsx)
 
-### [&rarr; ⚛️ Use with `react` and the `useTemporis` hook](https://github.com/kevinnayar/temporis/blob/master/src/examples/example-with-react-hooks.tsx)
+#### [&rarr; &nbsp; ⚛️ &nbsp; Use with `react` and the `useTemporis` hook](https://github.com/kevinnayar/temporis/blob/master/src/examples/example-with-react-hooks.tsx)
 
-### [&rarr; 🍦 Use with `vanilla javascript`](https://github.com/kevinnayar/temporis/blob/master/src/examples/example-with-vanilla-js.js)
+#### [&rarr; &nbsp; 🍦 &nbsp; Use with `vanilla javascript`](https://github.com/kevinnayar/temporis/blob/master/src/examples/example-with-vanilla-js.js)
 
 <br />
 
@@ -58,21 +58,31 @@ currentItem = temporis.getCurrentItem(); // returns 2nd item
 
 ## API
 
+### Overview
+
+`temporis` is sequential and synchronous by design. No promises, no asynchronous behavior, just pure sequential method calls. Each action that is passed into the `temporis` internal history should be given a full state object at that point in time. These actions construct the timeline of actions and then `temporis` provides the API to traverse over that timeline.
+
+It's great for apps where users are performing several actions and you want to provide them the ability to undo and redo their actions. It's small, simple, and can be wired in with a few lines of code.
+
 #### Instantiate
 ```ts
 const temporis = Temporis(20);
 ```
-> Takes an optional argument `limit (number)` for the number of actions stored in history, defaults to 100. Increasing this will increase the memory footprint of your app, so caveat emptor 😊
+> This is not a class, so you don't need the `new` keyword when instantiating it. The function takes an optional argument `limit` which is of type `number`. This represents the number of actions stored in history and it defaults to a 100. There is no upper limit but increasing this will increase the memory footprint of your app, so caveat emptor 😊
 
 #### Push a single action
 ```ts
-temporis.pushOne({ color: 'red' });
+temporis.pushOne({ color: 'red', name: 'foo' });
 ```
 > Pushes a single action into history which becomes the current state.
 
 #### Push many actions sequentially
 ```ts
-const actions = [{ color: 'red' }, { color: 'green' }, { color: 'blue' }];
+const actions = [
+  { color: 'red', name: 'foo' },
+  { color: 'green', name: 'foo' },
+  { color: 'blue', name: 'foo' },
+];
 temporis.pushMany(actions);
 ```
 > Pushes many actions into history in sequence, the last of which becomes the current state.
@@ -81,19 +91,19 @@ temporis.pushMany(actions);
 ```ts
 temporis.undo();
 ```
-> Goes back one action and makes that the current state.
+> Goes back one action and makes that the current state. If there is no previous action, it does nothing.
 
 #### Redo
 ```ts
 temporis.redo();
 ```
-> Goes forward one action and makes that the current state.
+> Goes forward one action and makes that the current state. If there is no future action, it does nothing.
 
 #### Get current item 
 ```ts
 const currentItem = temporis.getCurrentItem();
 ```
-> Returns the current state.
+> Returns the current state. If there is no currrent action in history (i.e, you have not pushed anything as yet) it returns `undefined`.
 
 
 <br />
