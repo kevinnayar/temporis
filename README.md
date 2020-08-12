@@ -26,18 +26,11 @@ Under **8KB** minified / Under **3KB** minified + gzipped.
 
 ![alt text](https://github.com/kevinnayar/temporis/blob/master/src/assets/undo-redo.gif?raw=true)
 
-### Check out these examples
 
-#### [&rarr; &nbsp; ⚛️ &nbsp; Use with `react`](https://github.com/kevinnayar/temporis/blob/master/src/examples/example-with-react.tsx)
-
-#### [&rarr; &nbsp; ⚛️ &nbsp; Use with `react` and the `useTemporis` hook](https://github.com/kevinnayar/temporis/blob/master/src/examples/example-with-react-hooks.tsx)
-
-#### [&rarr; &nbsp; 🍦 &nbsp; Use with `vanilla javascript`](https://github.com/kevinnayar/temporis/blob/master/src/examples/example-with-vanilla-js.js)
-
-<br />
-
+### Vanilla JS
 
 ```ts
+import Temporis from 'temporis'; 
 const temporis = Temporis(50);
 
 // Push complete state with each action
@@ -54,6 +47,47 @@ currentItem = temporis.getCurrentItem(); // returns 1st item
 temporis.redo();
 currentItem = temporis.getCurrentItem(); // returns 2nd item
 ```
+
+### React
+
+```tsx
+import * as React from 'react';
+import Temporis, { useTemporis } from 'temporis'; 
+
+const temporis = Temporis();
+const initialState = { name: 'Hello, World!' };
+temporis.pushOne(initialState);
+
+export default function App() {
+  const { items, pushOne, undo, redo } = useTemporis<>(temporis, initialState);
+
+  return (
+    <div className="app">
+      <button className="action-btn" onClick={undo}>Undo</button>
+      <button className="action-btn" onClick={redo}>Redo</button>
+
+      <input
+        className="name-input"
+        name="name"
+        value={items.name}
+        onChange={(e) => pushOne({ name: e.target.value })}
+      />
+
+      <div className="preview">{items.name}</div>
+    </div>
+  );
+}
+```
+
+<br />
+
+### Check out these examples
+
+#### [&rarr; &nbsp; ⚛️ &nbsp; Use with `react`](https://github.com/kevinnayar/temporis/blob/master/src/examples/example-with-react.tsx)
+
+#### [&rarr; &nbsp; ⚛️ &nbsp; Use with `react` and the `useTemporis` hook](https://github.com/kevinnayar/temporis/blob/master/src/examples/example-with-react-hooks.tsx)
+
+#### [&rarr; &nbsp; 🍦 &nbsp; Use with `vanilla javascript`](https://github.com/kevinnayar/temporis/blob/master/src/examples/example-with-vanilla-js.js)
 
 
 <br />
