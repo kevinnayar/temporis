@@ -8,9 +8,11 @@ Under **8KB** minified / Under **3KB** minified + gzipped.
 
 <br />
 
-- **💾 [Installation](#Installation)**
-- **👍 [Usage](#Usage)**
-- **💻 [API](#API)**
+#### [&rarr; &nbsp; 💾 &nbsp; Installation](#Installation)
+
+#### [&rarr; &nbsp; 👍 &nbsp; Usage](#Usage)
+
+#### [&rarr; &nbsp; 💻 &nbsp; API](#API)
 
 
 <br />
