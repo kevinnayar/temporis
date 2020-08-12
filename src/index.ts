@@ -62,8 +62,8 @@ export default function Temporis<T>(limit?: number): TemporisInstance<T> {
     const nextItem = _history[index + 1];
 
     if (currentItem !== undefined && nextItem !== undefined) {
-      _history[index] = { ...currentItem, isCurrent: false };
-      _history[index + 1] = { ...nextItem, isCurrent: true };
+      _history[index].isCurrent = false;
+      _history[index + 1].isCurrent = true;
     }
   };
 
