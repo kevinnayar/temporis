@@ -30,7 +30,8 @@ Under **8KB** minified / Under **3KB** minified + gzipped.
 ### Vanilla JS
 
 ```ts
-import Temporis from 'temporis'; 
+import Temporis from 'temporis';
+
 const temporis = Temporis(50);
 
 // Push complete state with each action
@@ -42,9 +43,11 @@ let currentItem = temporis.getCurrentItem(); // returns 3rd item
 
 temporis.undo();
 temporis.undo();
+
 currentItem = temporis.getCurrentItem(); // returns 1st item
 
 temporis.redo();
+
 currentItem = temporis.getCurrentItem(); // returns 2nd item
 ```
 
@@ -55,8 +58,7 @@ import * as React from 'react';
 import Temporis, { useTemporis } from 'temporis'; 
 
 const temporis = Temporis();
-const initialState = { name: 'Hello, World!' };
-temporis.pushOne(initialState);
+temporis.pushOne({ name: 'Hello, World!' });
 
 export default function App() {
   const { items, pushOne, undo, redo } = useTemporis(temporis, initialState);
