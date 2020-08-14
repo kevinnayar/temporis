@@ -59,7 +59,7 @@ const initialState = { name: 'Hello, World!' };
 temporis.pushOne(initialState);
 
 export default function App() {
-  const { items, pushOne, undo, redo } = useTemporis<>(temporis, initialState);
+  const { items, pushOne, undo, redo } = useTemporis(temporis, initialState);
 
   return (
     <div className="app">
