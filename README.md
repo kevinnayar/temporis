@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 
-An intuitive and lightweight approach to constructing timelines. Allows you to capture a history of app state as immutable snapshots and implement undo and redo with predictability and ease. 
+An intuitive and lightweight approach to constructing timelines. Allows you to capture a history of app state as immutable snapshots and implement **undo** and **redo** with predictability and ease. 
 
 Under **8KB** minified / Under **3KB** minified + gzipped.
 
@@ -94,13 +94,13 @@ It's great for apps where users are performing several actions and you want to p
 ```ts
 const temporis = Temporis(20);
 ```
-> This is not a class, so you don't need the `new` keyword when instantiating it. The function takes an optional argument `limit` which is of type `number`. This represents the number of actions stored in history and it defaults to a 100. There is no upper limit but increasing this will increase the memory footprint of your app, so caveat emptor 😊
+> This is not a class, so don't use the `new` keyword when instantiating it. The function takes an optional argument `limit` which is of type `number`. This represents the number of actions stored in history and it defaults to a 100. There is no upper limit but increasing this will increase the memory footprint of your app, so caveat emptor 😊
 
 #### Push a single action
 ```ts
 temporis.pushOne({ color: 'red', name: 'foo' });
 ```
-> Pushes a single action into history which becomes the current state.
+> Push a single action into history which becomes the current state.
 
 #### Push many actions sequentially
 ```ts
@@ -111,25 +111,25 @@ const actions = [
 ];
 temporis.pushMany(actions);
 ```
-> Pushes many actions into history in sequence, the last of which becomes the current state.
+> Push many actions into history in sequence, the last of which becomes the current state.
 
 #### Undo
 ```ts
 temporis.undo();
 ```
-> Goes back one action and makes that the current state. If there is no previous action, it does nothing.
+> Go back one action and make that the current state. If there is no previous action, do nothing.
 
 #### Redo
 ```ts
 temporis.redo();
 ```
-> Goes forward one action and makes that the current state. If there is no future action, it does nothing.
+> Go forward one action and makes that the current state. If there is no future action, do nothing.
 
 #### Get current item 
 ```ts
 const currentItem = temporis.getCurrentItem();
 ```
-> Returns the current state. If there is no currrent action in history (i.e, you have not pushed anything as yet) it returns `undefined`.
+> Returns the current state. If there is no currrent action in history (i.e, you haven't pushed anything as yet), returns `undefined`.
 
 
 
