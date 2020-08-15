@@ -11,6 +11,7 @@ export type TemporisInstance<T> = {
   undo: () => void;
   redo: () => void;
   getCurrentItem: () => void | T;
+  getHistory: () => TemporisItem<T>[];
 };
 
 const createSeriesItem = <T>(item: T): TemporisItem<T> => ({ item, isCurrent: true });
@@ -72,11 +73,14 @@ export default function Temporis<T>(limit?: number): TemporisInstance<T> {
     return currentItemMaybe ? currentItemMaybe.item : undefined;
   };
 
+  const getHistory = (): TemporisItem<T>[] => _history;
+
   return {
     pushOne,
     pushMany,
     undo,
     redo,
     getCurrentItem,
+    getHistory,
   };
 }

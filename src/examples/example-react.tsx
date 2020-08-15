@@ -20,7 +20,7 @@ const initialState: Items = {
 
 temporis.pushOne(initialState);
 
-export default function ExampleWithReact() {
+export default function ExampleReact() {
   const [items, setItems] = useState<Items>(initialState);
 
   function pushOne(items: Items) {
