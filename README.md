@@ -6,7 +6,7 @@ An intuitive and lightweight approach to constructing timelines. Allows you to c
 
 Under **8KB** minified / Under **3KB** minified + gzipped.
 
-<br />
+![alt text](https://github.com/kevinnayar/temporis/blob/master/src/assets/undo-redo.gif?raw=true)
 
 #### [&rarr; &nbsp; 💾 &nbsp; Installation](#Installation)
 
@@ -14,23 +14,16 @@ Under **8KB** minified / Under **3KB** minified + gzipped.
 
 #### [&rarr; &nbsp; 💻 &nbsp; API](#API)
 
-
-<br />
-
 ## Installation
 `npm install temporis` &nbsp; or &nbsp; `yarn add temporis`
 
-<br />
-
 ## Usage
-
-![alt text](https://github.com/kevinnayar/temporis/blob/master/src/assets/undo-redo.gif?raw=true)
-
 
 ### Vanilla JS
 
 ```ts
-import Temporis from 'temporis'; 
+import Temporis from 'temporis';
+
 const temporis = Temporis(50);
 
 // Push complete state with each action
@@ -42,9 +35,11 @@ let currentItem = temporis.getCurrentItem(); // returns 3rd item
 
 temporis.undo();
 temporis.undo();
+
 currentItem = temporis.getCurrentItem(); // returns 1st item
 
 temporis.redo();
+
 currentItem = temporis.getCurrentItem(); // returns 2nd item
 ```
 
@@ -55,11 +50,10 @@ import * as React from 'react';
 import Temporis, { useTemporis } from 'temporis'; 
 
 const temporis = Temporis();
-const initialState = { name: 'Hello, World!' };
-temporis.pushOne(initialState);
+temporis.pushOne({ name: 'Hello, World!' });
 
 export default function App() {
-  const { items, pushOne, undo, redo } = useTemporis<>(temporis, initialState);
+  const { items, pushOne, undo, redo } = useTemporis(temporis, initialState);
 
   return (
     <div className="app">
@@ -79,8 +73,6 @@ export default function App() {
 }
 ```
 
-<br />
-
 ### Check out these examples
 
 #### [&rarr; &nbsp; ⚛️ &nbsp; Use with `react`](https://github.com/kevinnayar/temporis/blob/master/src/examples/example-with-react.tsx)
@@ -89,8 +81,6 @@ export default function App() {
 
 #### [&rarr; &nbsp; 🍦 &nbsp; Use with `vanilla javascript`](https://github.com/kevinnayar/temporis/blob/master/src/examples/example-with-vanilla-js.js)
 
-
-<br />
 
 ## API
 
@@ -142,5 +132,4 @@ const currentItem = temporis.getCurrentItem();
 > Returns the current state. If there is no currrent action in history (i.e, you have not pushed anything as yet) it returns `undefined`.
 
 
-<br />
 
