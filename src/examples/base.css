@@ -78,9 +78,33 @@ button:hover {
 }
 
 .preview {
-  min-height: 200px;
+  min-height: 120px;
   border: 10px solid #f1f5f8;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+.timeline {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.timeline-item {
+  min-width: 10%;
+  padding: 10px;
+  font-size: 12px;
+  box-sizing: border-box;
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+.timeline-item.active {
+  background: #192849;
+  color: #eee;
+}
+.timeline-item.inactive {
+  background: #ddd;
+  color: #999;
+}
+
+

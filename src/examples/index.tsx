@@ -3,6 +3,7 @@ import * as ReactDOM from 'react-dom';
 
 import ExampleReact from './example-react';
 import ExampleReactHooks from './example-react-hooks';
+import ExampleReactTimeline from './example-react-timeline';
 
 function App() {
   return (
@@ -12,8 +13,12 @@ function App() {
         <ExampleReact />
       </div>
       <div className="section">
-        <h1>React with Hooks</h1>
+        <h1>React with hooks</h1>
         <ExampleReactHooks />
+      </div>
+      <div className="section">
+        <h1>History</h1>
+        <ExampleReactTimeline />
       </div>
     </div>
   );
