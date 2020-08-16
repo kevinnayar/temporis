@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { TemporisInstance } from './index';
 
 export type UseTemporisHook<T> = {
-    items: T;
-    pushOne: (items: T) => void;
-    undo: () => void;
-    redo: () => void;
+  items: T;
+  pushOne: (items: T) => void;
+  undo: () => void;
+  redo: () => void;
 };
 
 export function useTemporis<T>(temporisInstance: TemporisInstance<T>, initialState: T): UseTemporisHook<T> {
