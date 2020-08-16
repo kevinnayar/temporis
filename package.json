@@ -1,6 +1,6 @@
 {
   "name": "temporis",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An intuitive and lightweight approach to constructing timelines. Allows you to capture a history of app state as immutable snapshots and implement undo and redo with predictability and ease.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

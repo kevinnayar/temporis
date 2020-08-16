@@ -19,7 +19,7 @@ const initialState: Items = {
 
 temporis.pushOne(initialState);
 
-export default function ExampleWithReactHooks() {
+export default function ExampleReactHooks() {
   const { items, pushOne, undo, redo } = useTemporis<Items>(temporis, initialState);
 
   return (
