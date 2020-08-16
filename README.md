@@ -136,7 +136,7 @@ const currentItem = temporis.getCurrentItem();
 ```ts
 const history = temporis.getHistory();
 ```
-> Returns the history of actions storeed within the `temporis` instance. Mostly for internal purposes, but can be helpful in debugging. 
+> Returns the history of actions stored within the `temporis` instance. Mostly for internal purposes, but can be helpful in debugging. 
 
 
 
