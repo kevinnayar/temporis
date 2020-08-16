@@ -75,13 +75,13 @@ export default function App() {
 
 ### Check out these examples
 
-#### [&rarr; &nbsp; ⚛️ &nbsp; `react`](https://github.com/kevinnayar/temporis/blob/master/src/examples/example-react.tsx)
+#### [&rarr; &nbsp; ⚛️ &nbsp; `react`](https://github.com/kevinnayar/temporis/blob/main/src/examples/example-react.tsx)
 
-#### [&rarr; &nbsp; ⚛️ &nbsp; `react` with `useTemporis` hook](https://github.com/kevinnayar/temporis/blob/master/src/examples/example-react-hooks.tsx)
+#### [&rarr; &nbsp; ⚛️ &nbsp; `react` with `useTemporis` hook](https://github.com/kevinnayar/temporis/blob/main/src/examples/example-react-hooks.tsx)
 
-#### [&rarr; &nbsp; 🍦 &nbsp; `vanilla javascript`](https://github.com/kevinnayar/temporis/blob/master/src/examples/example-vanilla-js.js)
+#### [&rarr; &nbsp; 🍦 &nbsp; `vanilla javascript`](https://github.com/kevinnayar/temporis/blob/main/src/examples/example-vanilla-js.js)
 
-#### [&rarr; &nbsp; 🍦 &nbsp; `vanilla javascript` with DOM manipulation](https://github.com/kevinnayar/temporis/blob/master/src/examples/example-vanilla-js-dom.js)
+#### [&rarr; &nbsp; 🍦 &nbsp; `vanilla javascript` with DOM manipulation](https://github.com/kevinnayar/temporis/blob/main/src/examples/example-vanilla-js-dom.js)
 
 ## API
 
