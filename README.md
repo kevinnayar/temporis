@@ -8,11 +8,11 @@ Under **8KB** minified / Under **3KB** minified + gzipped.
 
 **Undo/Redo**
 
-![Undo/Redo](https://github.com/kevinnayar/temporis/blob/main/src/assets/undo-redo.gif?raw=true)
+![Undo/Redo](https://github.com/kevinnayar/temporis/blob/main/src/assets/undo-redo.gif-ui?raw=true)
 
 **Visualizing the history of actions**
 
-![History](https://github.com/kevinnayar/temporis/blob/main/src/assets/history-timeline.gif?raw=true)
+![History](https://github.com/kevinnayar/temporis/blob/main/src/assets/history-ui.gif?raw=true)
 
 #### [&rarr; &nbsp; 💾 &nbsp; Installation](#Installation)
 
