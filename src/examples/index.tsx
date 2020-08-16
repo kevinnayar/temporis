@@ -1,18 +1,19 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import ExampleWithReact from './example-with-react';
-import ExampleWithReactHooks from './example-with-react-hooks';
+
+import ExampleReact from './example-react';
+import ExampleReactHooks from './example-react-hooks';
 
 function App() {
   return (
     <div className="app">
       <div className="section">
         <h1>React</h1>
-        <ExampleWithReact />
+        <ExampleReact />
       </div>
       <div className="section">
         <h1>React with Hooks</h1>
-        <ExampleWithReactHooks />
+        <ExampleReactHooks />
       </div>
     </div>
   );
@@ -20,4 +21,3 @@ function App() {
 
 const rootElement = document.getElementById('root');
 ReactDOM.render(<App />, rootElement);
-

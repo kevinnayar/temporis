@@ -1,5 +1,6 @@
 import * as React from 'react';
-import Temporis, { useTemporis } from '../index'; 
+import { useState } from 'react';
+import Temporis from '../index';
 
 type Items = {
   name: string;
@@ -19,8 +20,29 @@ const initialState: Items = {
 
 temporis.pushOne(initialState);
 
-export default function ExampleWithReactHooks() {
-  const { items, pushOne, undo, redo } = useTemporis<Items>(temporis, initialState);
+export default function ExampleReact() {
+  const [items, setItems] = useState<Items>(initialState);
+
+  function pushOne(items: Items) {
+    temporis.pushOne(items);
+    setItems(items);
+  }
+
+  function undo() {
+    temporis.undo();
+    const current = temporis.getCurrentItem();
+    if (current) {
+      setItems(current);
+    }
+  }
+
+  function redo() {
+    temporis.redo();
+    const current = temporis.getCurrentItem();
+    if (current) {
+      setItems(current);
+    }
+  }
 
   return (
     <div className="app">
@@ -99,4 +121,3 @@ export default function ExampleWithReactHooks() {
     </div>
   );
 }
-

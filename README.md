@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 
-An intuitive and lightweight approach to constructing timelines. Allows you to capture a history of app state as immutable snapshots and implement **undo** and **redo** with predictability and ease. 
+An intuitive and lightweight approach to constructing timelines. Allows you to capture a **history of app state** as immutable snapshots and implement **undo** and **redo** with predictability and ease. 
 
 Under **8KB** minified / Under **3KB** minified + gzipped.
 
@@ -24,7 +24,7 @@ Under **8KB** minified / Under **3KB** minified + gzipped.
 ```ts
 import Temporis from 'temporis';
 
-const temporis = Temporis(50);
+const temporis = Temporis();
 
 // Push complete state with each action
 temporis.pushOne({ id: 'foo', name: 'Foo', color: 'red', size: 28 }); // 1st
@@ -75,12 +75,13 @@ export default function App() {
 
 ### Check out these examples
 
-#### [&rarr; &nbsp; ⚛️ &nbsp; Use with `react`](https://github.com/kevinnayar/temporis/blob/master/src/examples/example-with-react.tsx)
+#### [&rarr; &nbsp; ⚛️ &nbsp; `react`](https://github.com/kevinnayar/temporis/blob/master/src/examples/example-react.tsx)
 
-#### [&rarr; &nbsp; ⚛️ &nbsp; Use with `react` and the `useTemporis` hook](https://github.com/kevinnayar/temporis/blob/master/src/examples/example-with-react-hooks.tsx)
+#### [&rarr; &nbsp; ⚛️ &nbsp; `react` with `useTemporis` hook](https://github.com/kevinnayar/temporis/blob/master/src/examples/example-react-hooks.tsx)
 
-#### [&rarr; &nbsp; 🍦 &nbsp; Use with `vanilla javascript`](https://github.com/kevinnayar/temporis/blob/master/src/examples/example-with-vanilla-js.js)
+#### [&rarr; &nbsp; 🍦 &nbsp; `vanilla javascript`](https://github.com/kevinnayar/temporis/blob/master/src/examples/example-vanilla-js.js)
 
+#### [&rarr; &nbsp; 🍦 &nbsp; `vanilla javascript` with DOM manipulation](https://github.com/kevinnayar/temporis/blob/master/src/examples/example-vanilla-js-dom.js)
 
 ## API
 
@@ -92,7 +93,7 @@ It's great for apps where users are performing several actions and you want to p
 
 #### Instantiate
 ```ts
-const temporis = Temporis(20);
+const temporis = Temporis(50);
 ```
 > This is not a class, so don't use the `new` keyword when instantiating it. The function takes an optional argument `limit` which is of type `number`. This represents the number of actions stored in history and it defaults to a 100. There is no upper limit but increasing this will increase the memory footprint of your app, so caveat emptor 😊
 
@@ -130,6 +131,13 @@ temporis.redo();
 const currentItem = temporis.getCurrentItem();
 ```
 > Returns the current state. If there is no currrent action in history (i.e, you haven't pushed anything as yet), returns `undefined`.
+
+#### Get history
+```ts
+const history = temporis.getHistory();
+```
+> Returns the history of actions stored within the `temporis` instance. Mostly for internal purposes, but can be helpful in debugging. 
+
 
 
 
