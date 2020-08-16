@@ -1,4 +1,4 @@
-import { useTemporis as _useTemporis } from './use-temporis';
+import { useTemporis as _useTemporis, UseTemporisHook as _UseTemporisHook } from './use-temporis';
 
 export type TemporisItem<T> = {
   item: T;
@@ -14,11 +14,13 @@ export type TemporisInstance<T> = {
   getHistory: () => TemporisItem<T>[];
 };
 
+export type UseTemporisHook<T> = _UseTemporisHook<T>;
+
+export const useTemporis = _useTemporis;
+
 const createSeriesItem = <T>(item: T): TemporisItem<T> => ({ item, isCurrent: true });
 
 const findCurrentItemIndex = <T>(history: TemporisItem<T>[]): number => history.findIndex((h) => h.isCurrent === true);
-
-export const useTemporis = _useTemporis;
 
 export default function Temporis<T>(limit?: number): TemporisInstance<T> {
   const _history: TemporisItem<T>[] = [];
