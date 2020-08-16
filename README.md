@@ -6,7 +6,11 @@ An intuitive and lightweight approach to constructing timelines. Allows you to c
 
 Under **8KB** minified / Under **3KB** minified + gzipped.
 
-![alt text](https://github.com/kevinnayar/temporis/blob/master/src/assets/undo-redo.gif?raw=true)
+**Undo/Redo**
+![Undo/Redo](https://github.com/kevinnayar/temporis/blob/master/src/assets/undo-redo.gif?raw=true)
+
+**History**
+![History](https://github.com/kevinnayar/temporis/blob/master/src/assets/history-timeline.gif?raw=true)
 
 #### [&rarr; &nbsp; 💾 &nbsp; Installation](#Installation)
 

@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { TemporisInstance } from './index';
+import { TemporisInstance, TemporisItem } from './index';
 
 export type UseTemporisHook<T> = {
   items: T;
+  history: TemporisItem<T>[];
   pushOne: (items: T) => void;
   undo: () => void;
   redo: () => void;
@@ -28,8 +29,11 @@ export function useTemporis<T>(temporisInstance: TemporisInstance<T>, initialSta
     if (current) setItems(current);
   }
 
+  const history = temporisInstance.getHistory();
+
   return {
     items,
+    history,
     pushOne,
     undo,
     redo,
